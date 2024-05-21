@@ -1,0 +1,218 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    background-color: #AFD794;
+    margin-bottom: 60px;
+}
+.header-logo-container {
+    background-color: #4D7E3E;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-logo-container img {
+    height: 80px;
+}
+
+.navbar {
+    background-color: #4CAF50;
+    border-bottom: 3px solid #367B35;
+}
+
+.nav-link {
+    margin-right: 15px;
+}
+
+.nav-link:hover
+{
+    background-color: #367B35; 
+    border-radius: 5px
+}
+
+.containerTable {
+    max-width: 800px; 
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    text-align: center; 
+}
+
+.container {
+    background-color: #AFD794; 
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.search-container {
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+}
+
+.products-list {
+    margin-top: 2rem;
+}
+
+.product-item {
+    background-color: #B5C4A1; 
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.product-item span {
+    display: block;
+    text-align: left;
+}
+.progression-page-body{
+    display: grid;
+    
+}
+.progression-summary {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nutrient-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.nutrient {
+    text-align: center;
+    width: 150px;
+}
+
+.circle-chart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient( #4caf50 0% 100%, /* Initial percentage set to 100% */
+    #d3d3d3 0% 100% );
+}
+
+.circle-bg {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.circle-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.remaining-calories {
+    background-color: white;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 75%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: #367B35;
+    width: 100px;
+}
+
+.progress-bar span {
+    width: 100%;
+    font-size: 14px;
+}
+.content h1 {
+    color: #333;
+}
+
+.faq, .troubleshooting, .resources, .contact {
+    margin-bottom: 20px;
+}
+
+    .faq h2, .troubleshooting h2, .resources h2, .contact h2 {
+        color: #77aaff;
+    }
+.label {
+    margin-bottom: 5px;
+}
+
+
+.percentage {
+    font-size: 18px;
+}
+
+.meal-list {
+    margin-bottom: 20px;
+}
+
+.meal-item {
+    margin-bottom: 20px;
+}
+
+.meal-food-items table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.meal-food-items th, .meal-food-items td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.meal-food-items th {
+    background-color: #f2f2f2;
+}
+
+.remaining-calories {
+    text-align: center;
+    margin-top: 20px;
+}
+ 

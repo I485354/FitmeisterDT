@@ -1,0 +1,66 @@
+﻿@page
+@model SignupModel
+@{
+    ViewData["Title"] = "Sign in";
+}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Create Your Account</h2>
+        <form method="post" class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="Name">Name</label>
+                    <input asp-for=@Model.User.Username type="text" class="form-control" id="Name" name="Username" required>
+                    <span asp-validation-for="@Model.User.Username" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="">Date of Birth</label>
+                    <input asp-for=@Model.User.BirthDate type="date" class="form-control" id="DateOfBirth" name="BirthDate" required>
+                <span asp-validation-for="@Model.User.BirthDate" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="Email">Email</label>
+                    <input asp-for=@Model.User.Email type="email" class="form-control" id="Email" name="Email" required>
+                <span asp-validation-for="@Model.User.Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="Password">Password</label>
+                    <input asp-for=@Model.User.Password type="password" class="form-control" id="Password" name="Password" required>
+                <span asp-validation-for="@Model.User.Password" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="PhoneNumber">Phone Number</label>
+                    <input asp-for=@Model.User.Phone type="text" class="form-control" id="PhoneNumber" name="Phone" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="Gender">Gender</label>
+                    <select asp-for=@Model.User.Gender class="custom-select" id="Gender" name="Gender" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="Height">Height (cm)</label>
+                    <input asp-for=@Model.User.Height type="number" class="form-control" id="Height" name="Height" required>
+                <span asp-validation-for="@Model.User.Height" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="Weight">Weight (kg)</label>
+                    <input asp-for=@Model.User.Weight type ="number" class="form-control" id="Weight" name="Weight" required>
+                <span asp-validation-for="@Model.User.Weight" class="text-danger"></span>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+

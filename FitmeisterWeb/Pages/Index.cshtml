@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Welcome";
+}
+<body>
+    <div class="jumbotron text-center">
+        <h1>Welcome to Fitmeister!</h1>
+        <p>Track your nutrition and fitness journey with ease.</p>
+        <a class="btn btn-primary" asp-page="/Support" role="button">Learn more</a>
+        <a class="btn btn-success" asp-page="/Signup" role="button">Sign Up</a>
+    </div>
+
+    <div class="container">
+        <section class="about">
+            <h2>About Fitmeister</h2>
+            <p>Fitmeister is your personal guide to a healthier lifestyle. Track your diet, monitor your progress, connect with a community, and get the support you need to achieve your fitness goals.</p>
+        </section>
+
+        <section class="features row">
+            <div class="col-md-4">
+                <h3>Track Your Progress</h3>
+                <p>Visualize your achievements with detailed charts and reports.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Join the Community</h3>
+                <p>Connect with peers to share experiences and tips.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Get Support</h3>
+                <p>Our team is here to support you every step of the way.</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <blockquote class="blockquote">
+                <p class="mb-0">"Since I started using Fitmeister, I've been able to stick to my fitness goals and feel better than ever!"</p>
+                <footer class="blockquote-footer">Jane Doe</footer>
+            </blockquote>
+            <blockquote class="blockquote">
+                <p class="mb-0">"The community feature is fantastic – it's like having a fitness buddy available 24/7!"</p>
+                <footer class="blockquote-footer">John Smith</footer>
+            </blockquote>
+        </section>
+    </div>
+    </main>
+</body>
+</html>

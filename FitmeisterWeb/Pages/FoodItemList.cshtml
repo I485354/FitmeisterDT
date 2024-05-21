@@ -1,0 +1,45 @@
+﻿@page
+@model FoodItemListModel
+@{
+    ViewData["Title"] = "FoodList";
+}
+
+@if(User.Identity.IsAuthenticated){
+<div class="container my-5">
+    <div class="text-center">
+        <h2 class="mb-4">Product zoek pagina</h2>
+        <form method="post" asp-page-handler="Search">
+            <div class="search-container mb-4">
+                <input class="search-input" type="text" placeholder="Zoeken..." asp-for="SearchTerm">
+                <button type="submit" class="btn btn-primary">Zoeken</button>
+            </div>
+        </form>
+        @if (Model.FoodItems != null && Model.FoodItems.Any())
+        {
+            <form method="post" asp-page-handler="SubmitSelection">
+                <div class="products-list">
+                    @foreach (var foodItem in Model.FoodItems)
+                    {
+                        <div class="product-item">
+                            <label>
+                                <input type="checkbox" name="selectedItems" value="@foodItem.FoodID" />
+                                @foodItem.FoodName
+                            </label>
+                        </div>
+                    }
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Opslaan</button>
+            </form>
+        }
+        else
+        {
+            <p>Geen voedselitems gevonden.</p>
+        }
+    </div>
+    </div>
+}
+else
+{
+    <a class="nav-item nav-link" asp-area="" asp-page="/Login">Login</a>
+    Redirect("/Login");
+}

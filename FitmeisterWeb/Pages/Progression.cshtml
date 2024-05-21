@@ -1,0 +1,96 @@
+﻿@page
+@model FitmeisterWeb.Pages.ProgressionModel
+@{
+	ViewData["Title"] = "Progression";
+}
+@if(User.Identity.IsAuthenticated){
+<div class="progression-page-body">
+    <h1>Progressie</h1>
+        <div class="progression-summary">
+            <div class="nutrient-summary">
+                <div class="nutrient">
+                <div class="circle-chart" data-percent="@Model.ProteinsInPercentages">
+                        <div class="circle-bg"></div>
+                        <div class="circle-overlay">
+                            <span>Proteins</span>
+                            <span>@Model.DailyLog.TotalProteins</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nutrient">
+                <div class="circle-chart" data-percent="@Model.CarbsInPercentages">
+                        <div class="circle-bg"></div>
+                        <div class="circle-overlay">
+                            <span>Carbs</span>
+                            <span>@Model.DailyLog.TotalCarbs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nutrient">
+                <div class="circle-chart" data-percent="@Model.FatsInPercentages">
+                        <div class="circle-bg"></div>
+                        <div class="circle-overlay">
+                            <span>Fats</span>
+                            <span>@Model.DailyLog.TotalFats</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="remaining-calories">
+                <div class="progress-container">
+                <div class="progress-bar" data-percentage="@Model.CalsInPercentages">
+                    
+                @* <div class="progress-bar" data-percentage="70"> *@
+                        <span>total eaten calories:</span>
+                        <span>@Model.DailyLog.TotalCalories</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="meal-list">
+            @foreach (var meal in Model.Meals)
+            {
+                <div class="meal-item">
+                    <div class="meal-info">
+                        <span>@meal.Name</span>
+                        <span>@meal.TimeStamp.ToString("HH:mm")</span>
+                    </div>
+                    <div class="meal-food-items">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Voedingsinformatie</th>
+                                    <th>Kcal</th>
+                                    <th>Eiwitten</th>
+                                    <th>Vetten</th>
+                                    <th>Koolhydraten</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.MealFoodItems.ContainsKey(meal.MealID))
+                                {
+                                    @foreach (var foodItem in Model.MealFoodItems[meal.MealID])
+                                    {
+                                        <tr>
+                                            <td>@foodItem.FoodName</td>
+                                            <td>@foodItem.Kcal</td>
+                                            <td>@foodItem.Protein</td>
+                                            <td>@foodItem.Fat</td>
+                                            <td>@foodItem.Carbs</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+    <button>Maak maaltijd</button>
+    </div>
+}
+else
+{
+    <h1>Login</h1>
+    <a class="nav-item nav-link" asp-area="" asp-page="/Login">Login</a>
+}
